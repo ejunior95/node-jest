@@ -1,10 +1,15 @@
+const { User } = require('../../src/app/models')
+
 describe('Authentication', () => {
-    it('should sum two numbers', () => {
-        const x = 2
-        const y = 4
+    it('should sum two numbers', async () => {
+        const user = await User.create({
+            name: 'Stefani',
+            email: 'stefanihtinha@hotmail.com',
+            password_hash: '28190992'
+        })
 
-        const sum = x + y
+        console.log(user)
 
-        expect(sum).toBe(6)
+        expect(user.email).toBe('stefanihtinha@hotmail.com')
     })
 })
